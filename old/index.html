@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+<title>jackie liu</title>
+<link rel=stylesheet type="text/css" href="style.css">
+<script src="jquery-2.1.0.min.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+<script src="galleryContents.js"></script>
+
+<script>
+
+
+function navigate(cur_n) {
+	if (cur_n == order.length - 1){
+			next_n=0;
+			prev_n = cur_n-1;
+	} else if (cur_n==0){
+			prev_n = order.length-1;
+			next_n= cur_n+1;
+	} else {
+			prev_n = cur_n-1;
+			next_n = cur_n+1;
+	}
+}
+
+		
+
+$(document).ready(function(){
+	$("#bio").hide();
+	$("h1").click(function(){	  
+			console.log("h1 clicked");
+	});
+
+	 // $(".link").hover(function(){
+  //       $(this).css("color", "#767676")
+  //       $(this).css("letter-spacing", "6px");
+        
+  //       }, function(){
+  //       $(this).css("color", "#B4CBC5")
+  //       $(this).css("letter-spacing", "0px");
+  //   });
+
+	$("#cv").click(function(){	  
+			console.log("cv clicked");
+			$("#gallery2").fadeOut(0);
+			$("#thumbContainer").fadeOut(0);
+			$("#bio").fadeOut(0);
+			$("#resume").fadeIn(500);
+
+			
+			$("#about").css("color", "#B4CBC5");
+			$("#cv").css("color", "#767676");
+			$("#works").css("color", "#B4CBC5");
+			$("#cv").css("letter-spacing", "6px");
+			$("#about").css("letter-spacing", "0px");
+			$("#works").css("letter-spacing", "0px");
+	});
+	$("#about").click(function(){	  
+			console.log("bio clicked");
+			$("#gallery2").fadeOut(0);
+			$("#thumbContainer").fadeOut(0);
+			$("#resume").fadeOut(0);
+			$("#bio").fadeIn(500);
+			
+			$("#about").css("color", "#767676");
+			$("#cv").css("color", "#B4CBC5");
+			$("#works").css("color", "#B4CBC5");
+			$("#cv").css("letter-spacing", "0px");
+			$("#about").css("letter-spacing", "6px");
+			$("#works").css("letter-spacing", "0px");
+	});
+	$("#works").click(function(){	  
+			console.log("bio clicked");
+			$("#gallery2").fadeOut();
+			
+			$("#resume").fadeOut(0);
+			$("#bio").fadeOut(0);
+			$("#thumbs").fadeIn(510);
+			$("#thumbContainer").fadeIn(510);
+			
+			$("#about").css("color", "#B4CBC5");
+			$("#cv").css("color", "#B4CBC5");
+			$("#works").css("color", "#767676");
+			$("#cv").css("letter-spacing", "0px");
+			$("#about").css("letter-spacing", "0px");
+			$("#works").css("letter-spacing", "6px");
+	});
+
+
+	$("#next").click(function(){	  
+			
+		
+			// n = next_n;
+			// Get the next and previous n's for the current n
+			navigate(n);
+			console.log("n: ".concat(n));
+			console.log("prev n: ".concat(prev_n));
+			console.log("nxt n: ".concat(next_n));
+			// n = next_n
+			// Get the dictionary key for the next n
+			chosenThumb = order[next_n];
+			n = next_n;
+			console.log("current n:".concat(n));
+			console.log(chosenThumb);
+			// navigate(n);
+			$("#galleryContent").hide("slide", { direction: "left" },500);
+		
+			setTimeout(function(){$("#galleryContent").html(content[chosenThumb])},500);
+			setTimeout(function(){$("#galleryContent").show("slide", { direction: "right" }, 500)},500);
+		
+			$("#projTitle").html(title[chosenThumb]);
+
+
+		});  
+		$("#prev").click(function(){	  
+			// n = prev_n;
+			navigate(n);
+			console.log("n: ".concat(n));
+			console.log("prev n: ".concat(prev_n));
+			console.log("nxt n: ".concat(next_n));
+			n = prev_n;
+			console.log("current n:".concat(n));
+			// n = current_n;
+			chosenThumb = order[prev_n];
+			console.log(chosenThumb);
+			// navigate(n);
+			// setTimeout(function(){$("#galleryContent").html(content[chosenThumb])},1000);
+			 $("#galleryContent").hide("slide", { direction: "right" }, 500);
+		
+			setTimeout(function(){$("#galleryContent").html(content[chosenThumb])},500);
+			setTimeout(function(){$("#galleryContent").show("slide", { direction: "left" }, 500)},500);
+		
+			$("#projTitle").html(title[chosenThumb]);
+
+
+		});  
+	$("#gallery2").hide();
+// Slide the menu categories upon click	
+//Anything you want to do while the gallery content is loaded you should put in here
+ 	$(".thumb").click(function(){	  
+		console.log("poop");
+
+		chosenThumb = "";
+		chosenThumb = (this.id);
+
+		$("#projTitle").html(title[chosenThumb]);
+		$("#galleryContent").html(content[chosenThumb]);
+		n = order.indexOf(chosenThumb);
+
+		console.log("current n");
+		console.log(n);
+		$("#thumbs").slideToggle(1500,"easeOutExpo");
+		$("#gallery2").slideToggle();
+
+		$("#back").click(function(){	  
+			console.log("back clicked");
+			$("#thumbs").slideDown(1500,"easeOutExpo");
+			$("#gallery2").slideUp();
+
+
+		});
+		//fix problem by putting next/prev/back buttons outside of galleryContent...
+		
+ 	 	
+
+
+
+	});
+
+ 
+
+ }); 
+</script>
+
+</head>
+<body>
+
+<div id="pagewrapper">
+
+<div id="sidebar">
+	<h1>jackie<br>lee liu</h1> 
+	<div id="email"> <div class="e"> insert email </div><div class="e">gmail.com </div></div>
+	<h2>
+		<span id="works" class="link"> works </span> <br>
+		<span id="about"class="link"> about </span> <br>
+		<span id="cv" class="link"> cv </span> <br>
+	</h2>
+
+
+	
+<!-- 	<div id= "navigation">
+	sort by <br>
+
+	<a href="digital.html">digital</a> <br>
+	<a href="physical.html">physical</a> <br>
+	<a href="light.html">light</a> <br>
+	<a href="paint.html">paint</a> <br>
+	<a href="web.html">web</a> <br>
+	<a href="interactive.html">interactive</a> 
+	</div> -->
+
+</div>
+
+<div id="gallery">
+	<div id="thumbContainer">
+	<div id="thumbs" class="thumbnails" >
+   <!--      <span style="cursor:pointer"> -->
+
+
+   <!--      <img src="thumb/distribution.jpg" id="distribution" class="thumb">
+  -->
+<!-- 	<div class="thumb" id="distribution">
+		<div id="dummy"></div>
+		<div id="caption">
+			july 2013
+		</div>
+	</div> -->
+
+		<img src="thumb/womb.jpg" id="womb" class="thumb">
+		<img src="thumb/baby.jpg" id="baby" class="thumb">
+		<img src="thumb/pulse.jpg" id="pulse" class="thumb">
+		<img src="thumb/oldsite.jpg" id="oldsite" class="thumb">
+		<img src="thumb/gaze.jpg" id="gaze" class="thumb">
+
+		<img src="thumb/jewel.jpg" id="jewel" class="thumb">
+		<img src="thumb/tsa.png" id="tsa" class="thumb">
+		<img src="thumb/jamin.png" id="jamin" class="thumb">
+		<img  src="thumb/eyes.jpg" id="eyes" class="thumb">
+		<img src="thumb/silver.gif" id="silver" class="thumb">
+		<img src="thumb/distribution.jpg" id="distribution" class="thumb"> 
+   		<img src="thumb/lucid.jpg" id="lucid" class="thumb">
+     	<img src="thumb/impressions.jpg" id="impressions" class="thumb">
+    	<img src="thumb/datacorruption.jpg" id="datacorruption" class="thumb">
+    	<img src="thumb/3d.jpg" id="3d" class="thumb">
+    	<img src="thumb/transparent.jpg" id="transparent" class="thumb">
+    	<img src="thumb/disselve.jpg" id="disselve" class="thumb">
+    	
+   
+        
+        
+        
+	</div>
+</div>
+	<div id="gallery2">
+		<br> 
+		<div id= 'galHead'> 
+			
+			<div id='projTitle'> Proj Title </div> 
+			<div id='navGal'> 
+				<div> 
+					<span id='back'> back</span> 
+				</div> 
+				
+					<div> <span id='prev'> <  </span>  &nbsp; &nbsp; <span id='next'>    > </span> </div> 
+			</div>  
+		</div> <div id="titlePadding"> </div> 
+		<div id="galleryContent"> 
+		<img src="full/distribution.jpg" class="full">
+		<br> 
+		text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text 
+		</div>
+	</div>
+	<div id="resume">
+		<span class="a1"> EDUCATION </span> <br>
+		<span class="a2"> Massachusetts Institute of Technology  </span><br>
+		<span class="a3"> B.S. in Electrical Engineering and Computer Science </span><br>
+		<span class="a4"> Relevant coursework: <br> Introduction to Algorithms | Mathematics 
+		for Computer Science <br> Introduction to Electrical Engineering
+and Computer Science <br> Architecture Workshop in Computational Design <br>
+Physics II: Electricity and Magnetism | Linear Algebra <span> <br><br>
+		
+		<span class="a2">West Morris Central High School </span><br>
+		<span class="a3"> International Baccalaureate Diploma Recipient</span><br>
+		<span class="a4"> Relevant coursework: <br>Computer Science | IB Physics HL | IB
+Visual Arts HL <span> <br><br>
+
+		<span class="a1"> EXPERIENCE </span> <br>
+		<span class="a2"> Self-Assembly Lab </span> <br>
+		<span class="a3"> Undergraduate Researcher </span><br>
+		<span class="a4"> Designing and testing of fluid-assembling chair, self-assembling cell-phone and granular jamming experiments under
+supervisor Skylar Tibbits </span> <br>
+		
+		<span class="a2">Design Fiction Group, MIT Media Lab </span><br>
+		<span class="a3"> Undergraduate Researcher </span><br>
+		<span class="a4"> Created JavaScript-intensive webapp for speculative designer Ai Hasegawa's (im)possible baby project <span> <br><br>
+		<span class="a1"> SKILLS </span> <br>
+		
+<span class="a2"> Code </span>
+		<span class="a4"> <ul> <li>Python | JavaScript | Java | C/C++</li>
+<li>	 HTML | CSS | jQuery</li>
+<li>	 Arduino </li></ul> </span>
+<span class="a2"> Design </span><br>
+		<span class="a4"> <ul> <li>Fine arts, etc.: painting | graphic design | illustration | fabrication </li>
+<li>2D Software: Photoshop CS | Illustrator | InDesign | Adobe Flash</li>
+<li>3D Software: AutoCad | Rhino</li> </span><br>
+
+
+	</div> <!-- end of resume -->
+
+<div id="bio">
+	<div><br><img src="flower.png" id="flower"></div> <div> <br>
+	hi, my name is jackie.<br> i am a 19-year-old electrical engineering and computer science major at a technological institute in cambridge, massachusetts. this website is a noble attempt to document my projects: scattered through the physical, the digital, and wherever in between. mostly, i just want to make things that are emotionally and personally resonant, whatever medium they might be in. <br>
+	i care deeply about color, and my favorite vegetable is the eggplant. </div>
+
+
+
+</div>
+	</div> 
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+<title>jackie liu</title>
+
+<!-- <script src="jquery-2.1.0.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.js"></script>
+<script src="jquery/jquery-ui.min.js"></script>
+<script src="galleryContents.js"></script>
+<script src="script.js"></script>
+<script>
+    $(document).bind('mobileinit',function(){
+        $.mobile.changePage.defaults.changeHash = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+    });
+</script> 
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<link rel=stylesheet type="text/css" href="style2.css">
+
+
+</head>
+<body>
+
+<div id="pagewrapper">
+
+<div id="sidebar">
+	<h1>jackie<br>lee liu</h1> 
+	<div id="email"> <div class="e"> insert email </div><div class="e">gmail.com </div></div>
+	<h2>
+		<span id="portfolio" class="link"> portfolio </span> <br>
+		<span id="works" class="link"> all works </span> <br>
+		<span id="about"class="link"> about </span> <br>
+		<span id="cv" class="link"> cv </span> <br>
+	</h2>
+
+	<div id="sort">
+	<h3> <span id="sortworks"> sort works by:</span><br>
+		<span id="digital" class="type">digital</span> <br>
+		<span id="physical" class="type">physical</span> <br>
+		
+		<span id="web" class="type">web</span> <br>
+		<span id="paint" class="type">paint</span> <br>
+		<span id="light" class="type">light</span> <br>
+
+	</h3>
+</div>
+
+	
+<!-- 	<div id= "navigation">
+	sort by <br>
+
+	<a href="digital.html">digital</a> <br>
+	<a href="physical.html">physical</a> <br>
+	<a href="light.html">light</a> <br>
+	<a href="paint.html">paint</a> <br>
+	<a href="web.html">web</a> <br>
+	<a href="interactive.html">interactive</a> 
+	</div> -->
+
+</div>
+
+<div id="galleryContainer">
+
+<div id="gallery">
+	<div id="thumbContainer">
+	<div id="thumbs" class="thumbnails" >
+   <!--      <span style="cursor:pointer"> -->
+
+
+   <!--      <img src="thumb/distribution.jpg" id="distribution" class="thumb">
+  -->
+<!-- 	<div class="thumb" id="distribution">
+		<div id="dummy"></div>
+		<div id="caption">
+			july 2013
+		</div>
+	</div> -->
+		<img src="thumb/skiary.png" id="skiary" class="thumb digital web">
+		<img src="thumb/womb.jpg" id="womb" class="thumb digital physical light">
+		<img src="thumb/baby.jpg" id="baby" class="thumb digital web">
+		<img src="thumb/pulse.jpg" id="pulse" class="thumb digital physical light">
+		<img src="thumb/oldsite.jpg" id="oldsite" class="thumb digital web">
+		<img src="thumb/gaze.jpg" id="gaze" class="thumb digital">
+
+		<img src="thumb/jewel.jpg" id="jewel" class="thumb light paint physical">
+		<img src="thumb/tsa.png" id="tsa" class="thumb digital">
+		<img src="thumb/jamin.png" id="jamin" class="thumb digital">
+		<img  src="thumb/eyes.jpg" id="eyes" class="thumb paint physical">
+		<img src="thumb/silver.gif" id="silver" class="thumb digital">
+		<img src="thumb/distribution.jpg" id="distribution" class="thumb paint physical"> 
+   		<img src="thumb/lucid.jpg" id="lucid" class="thumb paint physical">
+     	<img src="thumb/impressions.jpg" id="impressions" class="thumb physical paint">
+    	<img src="thumb/datacorruption.jpg" id="datacorruption" class="thumb physical paint">
+    	<img src="thumb/3d.jpg" id="3d" class="thumb physical paint">
+    	<img src="thumb/transparent.jpg" id="transparent" class="thumb digital">
+    	<img src="thumb/disselve.jpg" id="disselve" class="thumb physical paint">
+    	
+   
+        
+        
+        
+	</div>
+</div>
+
+
+	<div id="gallery2">
+		<div id= "pad"> <br> </div><br> <br> 
+		<div id ="headContainer">
+		<div id= 'galHead'> 
+			<br>
+			<div id='projTitle'> Proj Title </div>
+			<div id='navGal'> 
+				<div> 
+					<span id='back'> back</span> 
+				</div> 
+				
+					<div> <span id='prev'> <  </span>  &nbsp; &nbsp; <span id='next'>    > </span> </div> 
+			</div>   <div id="titlePadding"> </div> 
+			
+		</div> 
+	</div>
+		<div id="galleryContent">
+
+		<img src="full/distribution.jpg" class="full">
+		<br> 
+		text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text Description hahahiodj sidjfsjd text 
+		</div>
+	</div>
+	<div id="resume"><br> <span class="a2"> <a href="JackieLiuResume.pdf" target="blank">full resume here</a>  </span>
+		 <br> <br>
+		<span class="a1"> EXPERIENCE </span> <br> <br>
+		<span class="a2"> Self-Assembly Lab </span> <br>
+		<span class="a3"> Undergraduate Researcher </span><br>
+		<span class="a4"> </span> 
+		
+		<span class="a2">Design Fiction Group, MIT Media Lab </span><br>
+		<span class="a3"> Undergraduate Researcher </span><br>
+		<span class="a4">  <span> <br><br>
+
+		<span class="a1"> EDUCATION </span> <br> <br>
+		<span class="a2"> Massachusetts Institute of Technology  </span><br>
+		<span class="a3"> Class of 2018 | B.S. in Electrical Engineering and Computer Science </span><br>
+		
+		
+		<span class="a2">West Morris Central High School </span><br>
+		<span class="a3"> Class of 2014 | International Baccalaureate Diploma Recipient</span><br>
+
+
+		<br>
+		<span class="a1"> SKILLS </span> <br> <br>
+		<div class="left"> 
+
+		<span class="a2"> Code </span> <br>
+		<span class="a3"> Python, JavaScript <br>
+			HTML, CSS, jQuery <br> Java, C/C++ <br> Git, Bash, Meteor <br> Arduino <br> 
+	</div>
+
+
+<div class="right">
+<span class="a2"> Design </span><br>
+<span class="a3"> Painting, graphic design, illustration, fabrication <br> 2D: Software: Photoshop, Illustrator, InDesign, Flash <br> 3D Software: Autocad, Rhino
+</div>
+<br> <br>
+
+
+	
+
+
+	</div> <!-- end of resume -->
+
+<div id="bio">
+	<!-- <div><br><img src="flower.png" id="flower"></div> <div>  --><br> 
+	my name is jackie. i'm a sophomore studying computer science at MIT. <br> <br>i code, paint, design web interfaces, and constantly seek new mediums to create with.
+	<br>  <br>
+	this website is a noble attempt to document my projects: scattered through the physical, the digital, and wherever in between.
+	<br> <br>
+	mostly, i just want to make things that are intimate, dreamlike, and/or emotionally resonant, whatever medium they might be in. <br><br>
+
+	<h2 class="email">email:</h2> jackieleeliu(@)gmail(.)com <br><br> <br>jackie liu &copy; 2016 <br> 
+
+
+ </div>
+
+
+
+</div>
+</div>  <!-- for gallery -->
+
+</div> <!-- for gallery container -->
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,585 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: CooperHewittLight;
+    src: url(cooperHewitt-Light_0.otf);
+}
+@font-face {
+    font-family: CooperHewittBook;
+    src: url(cooperHewitt-Book_0.otf);
+}
+@font-face {
+    font-family: CooperHewittBold;
+    src: url(cooperHewitt-Bold_0.otf);
+}
+#body{
+	overflow:hidden;
+	overflow-x:hidden;
+	background-color:white;
+}
+
+#pagewrapper{
+	overflow:hidden;
+
+}
+html{
+	overflow:hidden;
+
+
+}
+
+#sidebar {
+	margin-top:10px;
+	width: 30vw;
+	height: 98vh;
+	overflow:hidden;
+	float: left;
+	position: relative;
+	height:96vh;
+	text-align: right;
+
+
+}
+
+#sort{
+	position:absolute;
+	bottom:0px;
+	right:10px;
+	font-family: CooperHewittLight;
+	color:#767676;
+	font-size:16px;
+}
+
+#sort span{
+ 		-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+ 	color:#839C97;
+}
+
+
+
+a{
+	color:#839C97 !important;
+
+}
+
+#sortworks{
+	font-size:20px;
+	color:#767676 !important;
+}
+
+#description{
+	width:85%;
+}
+
+#galleryContainer {
+	position: absolute;
+	right:0px;
+	height: 100vh;
+	width:67vw;
+	overflow:auto;
+}
+#gallery {
+	width: 60vw;
+	max-width:800px;
+	padding:1vw;
+	position:relative;
+	float:left;
+	overflow: visible;
+}
+
+#thumbs{
+margin-top:10px;
+}
+
+#gallery2{
+	overflow:visible;
+}
+
+#galleryContent{
+	overflow:visible;
+	height: 80vh;
+}
+
+.thumbnails {
+	padding:5px;
+
+}
+.thumb {
+	padding: 1%;
+	width: 30%;
+	opacity:.35;
+	border-radius:16px;
+	position: relative;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.type:hover{
+	cursor:pointer;
+}
+
+#caption{
+	position:absolute;
+	bottom: 15px;
+	left: 15px;
+	font-size: 20px;
+	color: white;
+	font-family: "CooperHewittLight", Helvetica, sans-serif;
+}
+#caption:hover {
+	opacity:1;
+}
+
+.thumb {
+	-webkit-filter: invert(100%);
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+.thumb:hover {
+	-webkit-filter: invert(0);
+    filter: invert(0);
+    opacity:1;
+    -webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+html {
+	font-size: 20px;
+
+	color: #839C97;
+	font-family: "CooperHewittLight", Helvetica, sans-serif;
+
+}
+h1 {
+	font-size:80px;
+	margin-top: 10px;
+	margin-bottom:0px;
+	font-weight:100;
+	color:#839C97;
+	font-family: "CooperHewittLight", Helvetica, sans-serif;
+	position: relative;
+	right: 20px ;
+
+}
+
+h2{
+
+	font-size: 24px;
+	font-family: "CooperHewittBook", Helvetica, sans-serif;
+	font-weight:lighter;
+	color:#B4CBC5;
+	position:relative;
+	right: 20px;
+}
+
+.email{
+	left:0px;
+}
+
+#bio {
+		font-family: "CooperHewittLight", Helvetica, sans-serif;
+		line-height: 125%;
+		font-size:20px;
+		padding:10px;
+}
+
+
+a {
+	color: #839C97;
+	text-decoration: none;
+}
+
+
+.full{
+	max-width:100%;
+	max-height: 480px;
+}
+
+#gallery2{
+	font-size:20px;
+	color:  #767676;
+	font-family: "CooperHewittBook", Helvetica, sans-serif;
+
+}
+#galleryContent{
+	font-size: 20px;
+	color: black;
+	font-family: "CooperHewittLight", Helvetica, sans-serif;
+	overflow-x:hidden;
+	overflow:visible;
+}
+#navGal {
+	position:absolute;
+	font-family: "CooperHewittLight", Helvetica, sans-serif;
+	color:black;
+	bottom:0;
+	right:0;
+	cursor: pointer;
+}
+
+#projTitle{
+	position:absolute;
+	bottom:0;
+	left:0;
+	font-size:20px;
+}
+#back{
+	float:right;
+
+}
+
+#headContainer{
+	position:fixed;
+	top:0vh;
+	left:34vw;
+	min-height:60px;
+	width: 60vw;
+	max-width:800px;
+	padding:0px;
+	/*background-color:#fafafa;*/
+	background-color:white;
+	padding-top:20px;
+	}
+
+#resume{
+	padding:10px;
+	display:none;
+	overflow:visible;
+	height:88vh;
+
+
+}
+
+ .a4 {
+	width: 90%;
+	display: block;
+}
+
+.a1{
+	font-family: "CooperHewittLight", Helvetica, sans-serif;
+	font-size:26px;
+}
+.a2{
+	font-family: "CooperHewittBook", Helvetica, sans-serif;
+	font-size:20px;
+	color: #839C97;;
+}
+.a3{
+	font-family: "CooperHewittLight", Helvetica, sans-serif;
+	/*font-style:italic;*/
+	font-size:20px;
+	color: black;
+
+}
+.a4{
+	font-family: "CooperHewittBook", Helvetica, sans-serif;
+	font-size:16px;
+	color: black;
+}
+
+.locus {
+	float:right;
+	font-family: "CooperHewittBook", Helvetica, sans-serif;
+	font-size:16px;
+	color: black;
+}
+
+
+.link:hover{
+	letter-spacing: 6px;
+    -webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	cursor: pointer;
+	color: #767676;
+}
+
+h1, .link {
+	    -webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+
+}
+h1:hover {
+	color:black;
+	letter-spacing: 1px;
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+}
+
+
+#bio{
+	
+	overflow:hidden;
+	height:88vh;
+
+
+}
+
+
+
+#flower{
+	width: 25%;
+	min-width:200px;
+	left:50%;
+	right:50%;
+	margin: auto;
+}
+
+#bio{
+	overflow:visible;
+}
+@media (min-width:900px) and (max-width:3000px) {
+ /* Target landscape smartphones, portrait tablets, narrow desktops */
+ 	#pagewrapper{
+ 		/*background-color:orange;*/
+ 	}
+ 	h1{
+ 		/*font-size: 8vw;*/
+ 		font-size: 80px;
+ 	}
+}
+@media (min-width:500px) and (max-width:900px) {
+ /* Target landscape smartphones, portrait tablets, narrow desktops */
+ 	#titlePadding{
+ 		height:1vh;
+ 	}
+	h1{
+ 		font-size:7vw;
+ /*		right:0;*/
+ 	}
+ 	h2{
+/* 		right:0;*/
+ 	}
+ 	  #flower{
+  	margin:auto;
+  	width:40%;
+  	
+  }
+	#sidebar{
+/*  	background-color:orange;*/
+	width:25vw;
+	}
+	#gallery{
+	width:66vw;
+	overflow-x:hidden;
+	overflow: visible;
+
+	}
+
+	#galleryContent{
+/*	height:96vh;*/
+	width:66vw;
+	overflow:visible;
+/*	background-color:blue;*/
+
+
+	}
+	#galleryContainer{
+		width:73vw;
+		overflow:auto;
+	}
+	#headContainer{
+		width:66vw;
+		left:28vw;
+		height:6vh;
+		top:0px;
+		min-height:34px;
+		max-height:60px;
+	/*	background-color:red;*/
+		padding-top:20px;
+
+	}
+	#projTitle{
+		min-height:30px;
+
+	}
+#galleryContainer{
+	overflow: auto;
+}
+	#pagewrapper{
+	/*width:90%;*/
+	width: 96vw;
+
+
+	}
+	body {
+		overflow:hidden;
+	}
+}
+
+.left{
+	width:200px;
+	display:inline-block;
+}
+
+.right{
+	width:300px;
+	display:inline-block;
+}
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+	background-color:white;
+}
+
+@media screen and (max-width: 500px) {
+  /* Target portrait smartphones */
+  #sort{
+  	visibility: hidden;
+  }
+  .e{
+  	display:inline;
+  }
+  #titlePadding{
+  	height:4px;
+  }
+  #flower{
+  	margin:auto;
+  	width:75%;
+  	
+ 
+  }
+
+  #sidebar{
+  	width: 96vw;
+  	height:15vh;
+  	min-height:0px;
+  	margin:auto;
+  }
+
+
+  #galleryContainer{
+  	position:relative;
+  	float:right;
+  	width:100vw;
+  	height:90vh;
+  	overflow:hidden;
+  }
+ #gallery{
+  	width:96vw;
+	height: 90vh;
+	overflow: hidden;
+	position:relative;
+	float:right;
+	margin-right:10px;
+	margin-left:10px;
+	padding:0px;
+  }
+  .full{
+  	max-width:96vw;
+  }
+
+	#thumbContainer{
+	overflow: auto;
+	
+	}
+	#thumbs{
+	overflow: visible;
+	height:80vh;
+	}
+
+  #gallery2, #galleryContent {
+  	overflow:visible;
+  	overflow-x:hidden;
+  	position: relative;
+  	bottom:0px; 
+  	padding:0px;
+  	height:90vh;
+  }
+
+
+#thumbs, #resume, #bio{
+	overflow:visible;
+	height:78vh;
+}
+
+#galleryContent{
+	height:76vh;
+
+}
+
+  h1{
+  	font-size:5.8vh;
+  	right:0;
+  }
+
+  h2{
+  	font-size:3.5vh;
+  	float:left;
+  	text-align:left;
+  	position: relative;
+  	left:0px;
+  }
+	h1{
+	float:right;
+	
+	}
+	#email{
+		position:absolute;
+		float:left;
+		right: auto;
+		left:0px;
+		top:0px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	h1{
+		font-size:5vh;
+	}
+	h2{
+		font-size:3vh;
+		left:10px;
+	}
+
+
+#headContainer{
+	position:fixed;
+	top:16vh;
+	left:2vw;
+	width: 94vw;
+	max-width:800px;
+	padding:0px;
+	margin-right:0px;
+	margin-left:0px;
+	max-height:50px;
+	height:4vh;
+	min-height:20px;
+
+	}
+	#pad{
+		display:none;
+	}
+	#projTitle{
+		position:absolute;
+	}
+	#bio{
+		overflow:auto;
+		margin-right:0px;
+	}
+	#resume{
+		overflow:auto;
+	}
+
+
+}
+
+#email{
+	display:none;
+}
+
+#projTitle{
+	font-size:24px;
+}
