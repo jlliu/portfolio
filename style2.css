@@ -50,6 +50,10 @@ html{
 	color:#767676;
 	font-size:16px;
 }
+#sortContainer{
+	display:none;
+}
+}
 
 #sort span{
  		-webkit-transition: all .4s ease-in-out;
@@ -119,6 +123,10 @@ margin-top:10px;
 	background-size: 100%;
 }
 
+
+
+
+
 .type:hover{
 	cursor:pointer;
 }
@@ -141,6 +149,87 @@ margin-top:10px;
     cursor: pointer;
 }
 
+.portfolio{
+	opacity:1;
+	width:100%;
+
+	  -webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+		-webkit-filter: invert(0%);
+/*    -webkit-filter: thumbDiv(20px);*/
+ 
+}
+
+.works{
+	opacity:.35;
+	-webkit-filter: invert(0%);
+/*    -webkit-filter: thumbDiv(20px);*/
+ 
+}
+/*.portfolio:hover{
+
+	  -webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+
+
+}*/
+/*.thumbDiv{
+	position:relative;
+}
+.color{
+	position:absolute;
+	top:0px;
+	z-index:2;
+	background-color: rgba(64,224,208,.25);
+	width:100%;
+	height:100%;
+}
+*/
+.thumbDiv{
+	position:relative;
+	opacity:.35;
+	transition: all .6s;
+}
+
+
+.thumbDiv:hover{
+	opacity:1;
+}
+
+
+.thumbtitle{
+	width:80%;
+	height:20%;
+	top:40%;
+	z-index:1;
+	margin:auto;
+	position:absolute;
+	left:10%;
+	text-align:center;
+	font-family: CooperHewittLight;
+	color:white;
+	font-size:24px;
+	opacity:0;
+	transition: all .3s;
+}
+
+.thumbDiv:hover .thumbtitle{
+	opacity:1;
+	transition: all 1s;
+	
+}
+
+.thumbtitle span{
+	font-size:20px;
+}
+
+.thumbtitle:hover{
+	cursor:pointer;
+}
 .thumb:hover {
 	-webkit-filter: invert(0);
     filter: invert(0);
@@ -155,7 +244,7 @@ html {
 	font-size: 20px;
 
 	color: #839C97;
-	font-family: "CooperHewittLight", Helvetica, sans-serif;
+	font-family: "CooperHewittBook", Helvetica, sans-serif;
 
 }
 h1 {
@@ -176,7 +265,13 @@ h2{
 	font-family: "CooperHewittBook", Helvetica, sans-serif;
 	font-weight:lighter;
 	color:#B4CBC5;
+	color: #839C97;
 	position:relative;
+	
+}
+
+#sidebar h2{
+	color:#B4CBC5;
 	right: 20px;
 }
 
@@ -215,19 +310,20 @@ a {
 	font-family: "CooperHewittLight", Helvetica, sans-serif;
 	overflow-x:hidden;
 	overflow:visible;
+
 }
 #navGal {
 	position:absolute;
 	font-family: "CooperHewittLight", Helvetica, sans-serif;
 	color:black;
-	bottom:0;
+	bottom:10px;
 	right:0;
 	cursor: pointer;
 }
 
 #projTitle{
 	position:absolute;
-	bottom:0;
+	bottom:10px;
 	left:0;
 	font-size:20px;
 }
@@ -247,6 +343,9 @@ a {
 	/*background-color:#fafafa;*/
 	background-color:white;
 	padding-top:20px;
+padding-bottom:8px;
+z-index:3;
+
 	}
 
 #resume{
@@ -341,6 +440,16 @@ h1:hover {
 #bio{
 	overflow:visible;
 }
+
+.thumbnailsworks{
+	display:none;
+}
+
+#portfolio{
+	color:#767676;
+	letter-spacing:6px;
+}
+
 @media (min-width:900px) and (max-width:3000px) {
  /* Target landscape smartphones, portrait tablets, narrow desktops */
  	#pagewrapper{

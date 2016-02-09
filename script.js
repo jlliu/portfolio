@@ -21,17 +21,10 @@ $(document).ready(function(){
 	});
 
 	$( ".selector" ).loader({
-  disabled: true
-});
+  			disabled: true
+	});
 
-	 // $(".link").hover(function(){
-  //       $(this).css("color", "#767676")
-  //       $(this).css("letter-spacing", "6px");
-        
-  //       }, function(){
-  //       $(this).css("color", "#B4CBC5")
-  //       $(this).css("letter-spacing", "0px");
-  //   });
+
 
 	$("#cv").click(function(){	  
 			console.log("cv clicked");
@@ -43,12 +36,10 @@ $(document).ready(function(){
 			$("#resume").fadeIn(500);
 			$("#sort").fadeOut();
 			
-			$("#about").css("color", "#B4CBC5");
+			$(".link").css("color", "#B4CBC5");
 			$("#cv").css("color", "#767676");
-			$("#works").css("color", "#B4CBC5");
+			$(".link").css("letter-spacing", "0px");
 			$("#cv").css("letter-spacing", "6px");
-			$("#about").css("letter-spacing", "0px");
-			$("#works").css("letter-spacing", "0px");
 	});
 	$("#about").click(function(){	  
 			console.log("bio clicked");
@@ -59,72 +50,73 @@ $(document).ready(function(){
 			$("#resume").fadeOut(0);
 			$("#bio").fadeIn(500);
 			
+			$(".link").css("color", "#B4CBC5");
 			$("#about").css("color", "#767676");
-			$("#cv").css("color", "#B4CBC5");
-			$("#works").css("color", "#B4CBC5");
-			$("#cv").css("letter-spacing", "0px");
+			$(".link").css("letter-spacing", "0px");
 			$("#about").css("letter-spacing", "6px");
-			$("#works").css("letter-spacing", "0px");
 	});
 	$("#works").click(function(){	  
 			console.log("bio clicked");
 			$("#gallery2").fadeOut();
 			$(".type").css("color", "#839C97");
 			$(".type").css("letter-spacing", "0px");
+			$(".thumbnailsportfolio").fadeOut();
 			$("#resume").fadeOut(0);
 			$("#bio").fadeOut(0);
 			$("#thumbs").fadeOut(100);
-			$(".thumb").show().delay(100);
+			$(".works").css("display","inline-block");
+			$(".thumbnailsworks").fadeIn().delay(100);
 			$("#thumbs").fadeIn(510);
 			$("#thumbContainer").fadeIn(510);
-			$("#sort").fadeIn(510);
 			
-			$("#about").css("color", "#B4CBC5");
-			$("#cv").css("color", "#B4CBC5");
+			$("#sortContainer").fadeIn(600);
+			
+			$(".link").css("color", "#B4CBC5");
 			$("#works").css("color", "#767676");
-			$("#cv").css("letter-spacing", "0px");
-			$("#about").css("letter-spacing", "0px");
+			$(".link").css("letter-spacing", "0px");
 			$("#works").css("letter-spacing", "6px");
 	});
 
+	$("#portfolio").click(function(){	  
+			console.log("bio clicked");
+			$("#gallery2").fadeOut();
+			$(".type").css("color", "#839C97");
+			$(".type").css("letter-spacing", "0px");
+			$("#sortContainer").fadeOut(500);
+			$("#resume").fadeOut(0);
+			$("#bio").fadeOut(0);
+			$("#thumbs").fadeOut(100);
+			$(".thumbnailsworks").fadeOut();
+			$(".thumbnailsportfolio").fadeIn().delay(100);
+			$("#thumbContainer").fadeIn(510);
+			
+			$(".link").css("color", "#B4CBC5");
+			$("#portfolio").css("color", "#767676");
+			$(".link").css("letter-spacing", "0px");
+			$("#portfolio").css("letter-spacing", "6px");
+	});
 
 	$("#next").click(function(){	  
-			
-		
-			// n = next_n;
-			// Get the next and previous n's for the current n
+
 			navigate(n);
-			// console.log("n: ".concat(n));
-			// console.log("prev n: ".concat(prev_n));
-			// console.log("nxt n: ".concat(next_n));
-			// n = next_n
-			// Get the dictionary key for the next n
+
 			chosenThumb = order[next_n];
 			n = next_n;
-			// console.log("current n:".concat(n));
-			// console.log(chosenThumb);
-			// navigate(n);
 			$("#galleryContent").hide("slide", { direction: "left" },500);
-		
 			setTimeout(function(){$("#galleryContent").html(content[chosenThumb])},500);
 			setTimeout(function(){$("#galleryContent").show("slide", { direction: "right" }, 500)},500);
-		
 			$("#projTitle").html(title[chosenThumb]);
 
 
 		});  
 		$("#prev").click(function(){	  
-			// n = prev_n;
 			navigate(n);
 			n = prev_n;
-			// console.log("current n:".concat(n));
-			// n = current_n;
 			chosenThumb = order[prev_n];
 			 $("#galleryContent").hide("slide", { direction: "right" }, 500);
 			setTimeout(function(){$("#galleryContent").html(content[chosenThumb])},500);
 			setTimeout(function(){$("#galleryContent").show("slide", { direction: "left" }, 500)},500);
 			$("#projTitle").html(title[chosenThumb]);
-
 
 		});  
 	$("#gallery2").hide();
@@ -175,35 +167,83 @@ $("#gallery2").on("swiperight",function(){
 
 // Slide the menu categories upon click	
 //Anything you want to do while the gallery content is loaded you should put in here
- 	$(".thumb").click(function(){	  
+ 	$(".portfolio").click(function(){	  
+		// console.log("PORTFOLIO CLASS CLICKED");
+
+		chosenThumb = "";
+		chosenThumb = (this.id);
+		$("#projTitle").html(title[chosenThumb]);
+		$("#galleryContent").html(content[chosenThumb]);
+		// If thumb chosen is a portfolio one set order to portfolio order
+		order = portfolioOrder;
+		$(".thumbnailsworks").hide();
+		$("#thumbContainer").slideUp(1500,"easeOutExpo");
+		$("#gallery2").slideDown();
+		$("#headContainer").fadeIn();
+
+
+		n = order.indexOf(chosenThumb);
+
+	});
+
+
+
+ 	$(".works").click(function(){	  
 		
 
 		chosenThumb = "";
 		chosenThumb = (this.id);
-		$("#sort").fadeOut();
+		$("#sortContainer").fadeOut();
+
 		$("#projTitle").html(title[chosenThumb]);
 		$("#galleryContent").html(content[chosenThumb]);
-		n = order.indexOf(chosenThumb);
-		$("#thumbs").slideToggle(1500,"easeOutExpo");
-		$("#gallery2").slideToggle();
-		$("#back").click(function(){	  
-			$("#thumbs").slideDown(1500,"easeOutExpo");
-			$("#gallery2").slideUp();
-			$("#sort").fadeIn();
-		});
-		//fix problem by putting next/prev/back buttons outside of galleryContent...
 		
- 	 	
+		order = worksOrder;
+		$(".thumbnailsportfolio").hide();
+		$("#thumbContainer").slideUp(1500,"easeOutExpo");		
+		$("#gallery2").slideDown();
+		$("#headContainer").fadeIn();
 
+		n = order.indexOf(chosenThumb);
+
+});
+
+
+	$("#back").click(function(){	  
+		$("#headContainer").hide();
+		$("#gallery2").slideUp(500);
+		$("#thumbContainer").slideDown(1500,"easeOutExpo");
+		$("#sortContainer").fadeIn(500);
+
+		
+	});
+
+	$(".thumbtitle").click(function(){	  
+		
+
+		chosenThumb = "";
+		chosenThumb = $(this).attr("name");
+		$("#sort").fadeOut();
+
+		$("#projTitle").html(title[chosenThumb]);
+		$("#galleryContent").html(content[chosenThumb]);
+
+		order = portfolioOrder;
+		$(".thumbnailsworks").hide();
+		$("#thumbContainer").slideUp(1500,"easeOutExpo");
+		$("#gallery2").slideDown();
+		$("#headContainer").fadeIn();
+
+
+		n = order.indexOf(chosenThumb);
 
 
 	});
 
 	$(".type").click(function(){
-		// console.log("type clicked");
+
 		chosenType = "";
 		chosenType = this.id;
-		// console.log(chosenType);
 		type = ["digital","physical","web","paint","light"];
 		$(".thumb").fadeOut();
 		//For each chosen type, make type grey and spaced out, make rest of types green and nrmal
@@ -212,7 +252,6 @@ $("#gallery2").on("swiperight",function(){
 		chosenID = "#" + chosenType;
 		for (i in type) {
 			t = type[i];
-			// console.log(t);
 			if (t != chosenType){
 				tID= "#" + t;
 				$(tID).css("color", "#839C97");
@@ -225,27 +264,9 @@ $("#gallery2").on("swiperight",function(){
 			
 
 
-		// if(chosenType == "digital"){
-		// 	$(".digital").fadeIn();
-		// } else if (chosenType == "physical"){
-		// 	$(".physical").fadeIn();
-		// }else if (chosenType == "web"){
-		// 	$(".web").fadeIn();
-		// }else if (chosenType =="paint"){
-		// 	$(".paint").fadeIn();
-		// }else if (chosenType == "light"){
-		// 	$(".light").fadeIn();
-		// }
-
-		// 	$(".digital").css("color", "#B4CBC5");
-		// 	$(".").css("color", "#B4CBC5");
-		// 	$("#works").css("color", "#767676");
-		// 	$("#cv").css("letter-spacing", "0px");
-		// 	$("#about").css("letter-spacing", "0px");
-		// 	$("#works").css("letter-spacing", "6px");
 		
 	});
 
- 
+	
 
  }); 
